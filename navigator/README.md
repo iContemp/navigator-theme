@@ -1,0 +1,261 @@
+# Navigator Theme for DokuWiki
+*A clean, multilingual, and navigation‑focused DokuWiki theme designed for clarity, calmness, and predictable structure.*
+
+Navigator is built on the current default DokuWiki template, preserving full compatibility with plugins and core features while introducing a cleaner layout, multilingual sorting, and a calm, topic‑based navigation system. It emphasizes readable typography, intuitive navigation, and a quiet visual presence, designed for authors who value structure and for readers who appreciate simplicity.
+
+Navigator includes a topic‑based top bar, improved autolist behavior, multilingual sorting support, and a design philosophy centered on calm, intentional documentation.
+
+---
+
+## Overview
+
+Navigator provides:
+
+- A clean, structured layout with a focus on readability  
+- A configurable top navigation bar for topic‑based browsing  
+- Automatic index generation for namespaces  
+- Multilingual sorting logic for natural alphabetical order  
+- A calm, editorial visual tone suitable for documentation and knowledge bases  
+- Full compatibility with DokuWiki’s no‑database architecture  
+
+Navigator is designed to be predictable, maintainable, and friendly to both editors and administrators.
+
+---
+
+## Features
+
+### Topic‑Based Navigation Bar
+Navigator includes a customizable top bar that allows administrators to define the vocabulary used for:
+
+- Topics  
+- Index  
+- Recent pages  
+- Search  
+- Other navigation elements  
+
+These labels are provided by the **NavigatorLabels** plugin and can be adapted to multilingual wikis.
+
+## Plugin Integration
+
+Navigator relies on the **NavigatorLabels** plugin for several core features, including:
+
+- customizable top‑bar vocabulary  
+- multilingual article‑stripping rules  
+- configuration of sorting behavior  
+- placeholder classes used by the theme’s CSS  
+
+Because these elements are essential to the theme’s layout and behavior, the NavigatorLabels plugin is **bundled with the theme** but must be placed in the DokuWiki plugin directory manually:
+
+<your_wiki>/lib/plugins/ as <your_wiki>/lib/plugins/navigatorlabels
+
+    NOTE: The theme will not function correctly without this plugin.
+
+Although NavigatorLabels may be published as a standalone plugin in the future, the version bundled with the theme is always the authoritative one and should remain installed alongside Navigator.
+
+### Multilingual Sorting
+Navigator includes a Unicode‑aware normalization engine that:
+
+- strips leading articles and elisions  
+- handles Portuguese, English, Spanish, and French out of the box  
+- supports custom article lists via NavigatorLabels  
+- normalizes punctuation, hyphens, apostrophes, and NBSP  
+- transliterates accented characters for consistent sorting  
+
+This ensures that titles like *A Casa*, *El Camino*, *The Journey*, and *L’Été* sort naturally.
+
+### Calm, Readable Typography
+Navigator uses a clean typographic system designed for:
+
+- long‑form reading  
+- documentation  
+- technical writing  
+- multilingual content  
+
+The layout avoids visual noise and emphasizes clarity.
+
+### Theme‑Scoped Customization
+Navigator includes an empty `tempstyle.css` file that acts as a theme‑local userstyle.  
+Administrators can safely override fonts, spacing, or colors without affecting other themes.
+
+---
+
+## Installation
+
+1. Copy the entire `navigator` folder into:
+    <your_wiki>/lib/tpl/
+
+2. In the DokuWiki admin panel, select **Navigator** as your active template.
+
+3. Install the **NavigatorLabels** plugin to enable:
+
+    - multilingual sorting  
+    - customizable top‑bar labels  
+    - article‑stripping configuration  
+    Inside of the root **Navigator** folder you will find **NavigatorLabels**
+    Move the **NavigatorLabels** to <your_wiki>/lib/plugins
+
+4. (Optional) Write any of your custom CSS in:
+    <your_wiki>/lib/tpl/navigator/css/tempstyle.css
+    This is a local file. Using tempstyle.css instead of the usual userstyle.css will prevent overriding styles in other themes.
+
+    This file is intentionally empty by default and safe for local overrides.
+
+---
+
+## Configuration
+
+Navigator relies on the **NavigatorLabels** plugin for:
+
+- multilingual article lists  
+- top‑bar vocabulary  
+- UI label customization  
+
+Visit: your Admin → Configuration Settings → NavigatorLabels
+
+
+to adjust these settings.
+
+---
+
+## Sorting Behavior
+
+Navigator normalizes titles before sorting by removing leading articles and elisions defined in the NavigatorLabels configuration.
+
+Examples:
+
+| Original Title                     | Normalized | Sorted Under |
+|-----------------------------------|------------|--------------|
+| A Casa                            | Casa       | C            |
+| The Journey                       | Journey    | J            |
+| El Camino                         | Camino     | C            |
+| L’Été                             | Été        | É            |
+| D’Amour                           | Amour      | A            |
+
+The normalization is:
+
+- Unicode‑aware  
+- punctuation‑aware  
+- NBSP‑safe  
+- multilingual  
+
+---
+
+## Maintainer Notes
+
+Navigator includes two core subsystems that benefit from additional context:  
+(1) the Unicode‑aware normalization logic used for sorting, and  
+(2) the top‑bar architecture that defines the theme’s navigation rhythm.
+
+---
+
+### 1. Normalization Logic (Sorting Engine)
+
+Navigator’s autolist system includes a Unicode‑aware normalization function implemented in:
+
+    <your_wiki>/lib/tpl/navigator/autolistNavigator.php
+
+The function:
+
+- strips leading articles and elisions  
+- handles French apostrophe elisions (`l’`, `d’`, `qu’`)  
+- removes NBSP and thin spaces  
+- normalizes punctuation and hyphens  
+- transliterates accented characters when possible  
+- preserves the original title for display  
+
+The article list is provided by the NavigatorLabels plugin and capped at 500 characters to prevent accidental misuse.
+
+When extending the logic:
+
+- prefer configuration over hard‑coding  
+- keep rules predictable  
+- test with multilingual titles and punctuation variants  
+
+The goal is to maintain a calm, multilingual sorting engine that behaves consistently across diverse content.
+
+---
+
+### 2. Top Bar Architecture (Topics, Sort, Custom Link)
+
+Navigator’s top bar is treated as a single typographic line. Its spacing, font choices, and hover behavior are intentionally designed to create a calm, predictable rhythm.
+
+#### Font Hierarchy
+- **UI font** for Topics (primary anchor)  
+- **Monospace** for Sort and Custom Link (secondary controls)  
+
+This visually separates navigation categories from control actions.
+
+#### Spacing Rhythm
+The top bar does not rely on `gap`.  
+Instead, spacing is controlled manually using small margins (0.25–0.35rem) to maintain an even optical cadence:
+
+**Topics ↓** — *pause* — **Latest • Oldest • A–Z • Custom Link**
+
+#### Baseline Alignment
+Monospace fonts sit slightly lower than proportional fonts.  
+A subtle vertical adjustment (`top: -0.7px`) is applied to the Custom Link to align baselines across the bar.
+
+#### Underline System
+Navigator uses a custom underline (border‑bottom) instead of `text-decoration`.  
+This ensures consistent thickness, color, and hover behavior across Topics, Sort, and Custom Link.
+
+#### Custom Link Behavior
+The Custom Link button is optional and fully admin‑configurable via NavigatorLabels:
+
+- `label_customlink`  
+- `customlink_url`  
+- `customlink_newtab`  
+
+If the URL is empty, the theme falls back to `start` to avoid broken links.
+
+#### Theme‑Scoped Overrides
+All user‑facing overrides should be placed in `tempstyle.css`.  
+This keeps the core theme clean and makes updates safe and reversible.
+
+---
+
+These notes summarize the architectural decisions that shape Navigator’s behavior and visual identity. They are intended to help maintainers understand the reasoning behind the layout, typography, and sorting logic.
+
+---
+
+## File Overview
+
+navigator/
+├── main.php               — theme entry point
+├── navigator.css          — main stylesheet
+├── tempstyle.css          — optional customization layer
+├── autolistNavigator.php  — sorting and autolist logic
+├── navigator_topbar.php   — top navigation bar
+├── detail.php             — media detail template
+├── tpl_functions.php      — helper functions
+└── template.info.txt      — theme metadata
+
+
+---
+
+## Compatibility
+
+- **DokuWiki:** Greebo → current  
+- **PHP:** 7.4+ and 8.x  
+- **Languages:** Fully multilingual  
+- **Plugins:** Works best with NavigatorLabels  
+
+---
+
+## Changelog
+
+The complete development history is kept in  
+**[CHANGELOG.txt](CHANGELOG.txt)**  
+to ensure a single, consistent source of truth.
+
+This README focuses on usage and configuration.
+
+
+
+## License
+Navigator is released under the MIT License.  
+See `LICENSE.txt` for details.
+
+
+
+

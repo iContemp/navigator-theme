@@ -1,0 +1,245 @@
+/**
+ * Navigator Theme — Top Bar Navigation System
+ * File: topbar_navigator.css
+ * Version: v20260318
+ *
+ * Purpose:
+ *   Defines the layout, typography, and interaction model for the
+ *   Navigator top bar, including Topics, Sort controls, and the
+ *   optional Custom Link button.
+ *
+ * Notes:
+ *   - Inherits global UI font unless overridden.
+ *   - Uses monospace for Sort group and Custom Link for visual grouping.
+ *   - Uses custom underline system (border-bottom) for hover states. 
+ *
+ * License:
+ *   MIT License — see LICENSE.txt in the theme root.
+ */
+
+
+/* =============================================================
+   1. GLOBAL TOP BAR POSITIONING
+   ============================================================= */
+
+/* Ensures top bar does not cover site content */
+body {
+    padding-top: 50.89px;
+}
+
+#dokuwiki__usertools {
+    top: 60px; /* match top bar height */
+    z-index: 21;
+}
+
+#navigator__topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 21;
+
+    background-color: __topbar_bg__;
+    color: __topbar_text__;
+
+    padding: 0.5em 0;
+    font-size: 1.3em;
+}
+
+
+/* =============================================================
+   2. TOP BAR INNER LAYOUT
+   ============================================================= */
+
+#navigator__topbar .nav-inner {
+    max-width: __site_width__;
+    margin: 0 auto;
+    padding: 0 1em;
+
+    display: flex;
+    align-items: center;
+
+    /* We control spacing manually for perfect rhythm */
+    gap: 0;
+}
+
+#navigator__topbar .nav-item,
+#navigator__topbar a {
+    color: __topbar_text__;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#navigator__topbar .nav-spacer {
+    flex: 1;
+}
+
+
+/* =============================================================
+   3. TOPICS BUTTON (TRIGGER)
+   ============================================================= */
+
+#navigator__topbar .nav-topics,
+#navigator__topbar .nav-topics:hover {
+    text-decoration: none !important;
+}
+
+#navigator__topbar .nav-topics {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 0.15em 0.1em;
+    border-bottom: 1px solid transparent;
+    margin-right: 0.35rem; /* NEW: restores spacing rhythm */
+}
+
+#navigator__topbar .nav-topics:hover {
+    border-bottom-color: currentColor;
+}
+
+
+/* =============================================================
+   4. TOPICS DROPDOWN PANEL
+   ============================================================= */
+
+#navigator__topics-panel {
+    display: none;
+    position: absolute;
+    top: 50.89px;
+    left: 0;
+    width: 100%;
+
+    background-color: __topbar_topicbg__;
+    border-bottom: 2px solid black;
+    padding: 0.8em 0;
+    z-index: 30;
+}
+
+#navigator__topics-panel .navigator-topics-list {
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 1em;
+    list-style: none;
+}
+
+#navigator__topics-panel .navigator-topics-list li {
+    margin: 0.4em 0;
+}
+
+#navigator__topics-panel .navigator-topics-list a {
+    color: __topbar_topictxt__;
+    text-decoration: none;
+}
+
+#navigator__topics-panel .navigator-topics-list a:hover {
+    text-decoration: underline;
+}
+
+
+/* =============================================================
+   5. SORTING GROUP
+   ============================================================= */
+
+.nav-sort-group {
+    font-family: var(--navigator-mono, monospace);
+    font-size: 0.92em;
+    opacity: 0.70;
+    font-weight: 400;
+
+    /* Manual spacing before Custom Link */
+    margin-right: 0.4rem;
+}
+
+.nav-sort-link,
+.nav-sort-current {
+    display: inline-block;
+    padding: 0 0.15em 0.1em;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.nav-sort-link:hover {
+    border-bottom-color: currentColor;
+}
+
+.nav-sort-current {
+    font-weight: bold;
+    opacity: 1;
+}
+
+.nav-sort-sep {
+    display: inline-block;
+    padding: 0 0.25em;
+    margin: 0 0.25rem;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+/* =============================================================
+   6. CUSTOM LINK BUTTON
+   ============================================================= */
+
+.nav-customlink {
+    margin-left: 0.25rem;
+}
+
+.nav-customlink a {
+    font-family: var(--navigator-mono, monospace);
+
+    position: relative;
+    top: -0.7px; /* lift by half a pixel */
+
+
+    font-weight: 400;
+    opacity: 0.75;
+    color: inherit;
+
+    font-size: 0.90em; /* softened presence */
+
+    display: inline-block;
+    padding: 0 0.15em 0.1em;
+
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+}
+
+.nav-customlink a:hover,
+.nav-customlink a:focus {
+    border-bottom-color: currentColor;
+}
+
+/*--------------- MOBILE "Custom Link" Moved to Topics layout ---------------------------------*/
+
+/* Hide custom link in the top bar */
+@media screen and (max-width: 600px) {
+    .nav-customlink,
+    .nav-sort-sep {
+        display: none;
+    }
+}
+
+/* Style new custom link. Custom Link injection resides in the tpl_function.php file */
+.topics-customlink {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.topics-customlink a {
+    font-size: 0.95em;
+    display: block;
+    font-weight: 500;
+}
+
+/* Style the Custom Link inside the Topics panel */
+#navigator__topics-panel .topics-customlink a {  
+    color: __custom_link_topics__;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 0.8rem; 
+}
+
+#navigator__topics-panel .topics-customlink a:hover {
+    text-decoration: underline;    
+}

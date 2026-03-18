@@ -1,0 +1,8 @@
+base    navigatorlabels
+author  Tony de Araujo
+email   navigator@icontemp.com
+date    2026-03-17
+name    NavigatorLabels Plugin
+desc    Provides helper functions and configuration options for the Navigator theme, including AUTOINDEX handling, multilingual sorting rules, customizable UI labels, and admin-defined Custom Link behavior. Designed for use with the DokuWiki engine.
+url     https://icontemp.com/wiki/navigator
+tags    navigator, theme, labels, multilingual, sorting, autolist, autindex, ui, customization, link

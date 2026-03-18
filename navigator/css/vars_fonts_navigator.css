@@ -1,0 +1,134 @@
+/**
+ * v20260317
+ * Navigator Theme — Font System & Design Tokens
+ * ------------------------------------------------------------
+ * Author: Tony de Araujo
+ * License: MIT (see LICENSE.txt in the Navigator theme)
+ * Since: 2026-02-01
+ *
+ * This file loads all font resources used by the theme and
+ * defines the global typography variables shared across the
+ * Navigator CSS architecture.
+ *
+ * Purpose
+ * -------
+ * 1. Provide a single, predictable place where fonts are declared.
+ * 2. Expose core typography tokens (:root variables) that control
+ *    the reading experience without affecting UI components.
+ * 3. Ensure fonts and variables load before any layout rules
+ *    (styles_navigator.css, topbar_navigator.css, extras_navigator.css).
+ *
+ * Structure
+ * ---------
+ * • @font-face blocks load Atkinson Hyperlegible locally from /fonts.
+ *   These declarations must remain at the top level and should not
+ *   be renamed or moved into selectors.
+ *
+ * • :root contains the theme’s typography tokens:
+ *      --font-reading      → global font-family for the entire site
+ *      --line-reading      → baseline line-height (vertical rhythm)
+ *      --font-size-reading → reading-panel scale (content only)
+ *
+ *   These variables are referenced throughout the theme and can be
+ *   safely adjusted to tune readability without breaking layout.
+ *
+ * Relationship to Other Files
+ * ---------------------------
+ * • styles_navigator.css   → applies global font-family and line-height,
+ *                            and sets the reading-panel font size.
+ *
+ * • topbar_navigator.css   → navigation system; inherits global font
+ *                            but does not override reading scale.
+ *
+ * • extras_navigator.css   → optional components and refinements.
+ *
+ * • footer_navigator.css   → (future) footer styling; will inherit
+ *                            global typography unless overridden.
+ *
+ * Editing Guidelines
+ * ------------------
+ * • Adjust the values in :root to customize reading comfort.
+ * • Do not rename the variables; other files depend on them.
+ * • Do not modify @font-face unless updating the font files.
+ * • Keep this file loaded first in style.ini to preserve cascade order.
+ *
+ * • For color variables, site width, and sidebar width, visit style.ini
+ *   located in the main theme folder.
+ *   These values can be quickly adjusted or reset through the
+ *   Admin Template Style Settings panel.
+ *
+ * This file is the foundation of Navigator's typographic identity.
+ * Treat it as the entry point to the theme’s design system.
+ */
+
+
+/*  Load style variables  */
+
+:root {
+    --font-reading: "Atkinson Hyperlegible", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    /* Typography rhythm token */
+    --line-reading: 1.65;  /* line-height for the entire theme */
+
+    /* Reading panel scale token */
+   
+    --font-size-reading: 1.16rem;  /* adjust content font-size while preserving UI proportions. */ 
+    /*1.19rem;*/
+
+    /* Note: visit styles.ini for color variables and site plus sidebar widths. 
+    However, all those can be quickly adjusted or reset in the Admin Template Style Settings*/
+
+    /* Monospace accent font for UI controls and technical glyphs */
+    --navigator-mono: "JetBrains Mono", monospace;
+
+}
+
+
+/** Load the current theme fonts as declared above. 
+ * The active font declaration resides in the styles_navigator.css file, 
+ * which is the next file in hierarchy for the Navigator theme 
+ */
+
+/* -------------------------------------------------------------
+   Typography: readable, humane, and accessible
+   -------------------------------------------------------------
+   Atkinson Hyperlegible provides strong clarity for all readers,
+   including those with low vision. The base size (21px) and
+   line-height (1.55) create a comfortable reading rhythm.   
+   ------------------------------------------------------------- */
+
+/* Atkinson Hyperlegible — Regular */
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src: url("../fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src: url("../fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic */
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src: url("../fonts/Atkinson-Hyperlegible-Italic-102a.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src: url("../fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}

@@ -1,0 +1,67 @@
+
+/**
+ * v20260317a
+ * styles_navigator.css  
+ * → applies global font-family and line-height, and sets the reading-panel font size.
+ * Please refer to vars_fonts_navigator.css for general guidelines 
+*/
+
+/* =============================================================
+   1. TYPOGRAPHY & GLOBAL LAYOUT
+   ============================================================= */
+
+
+/* Global font identity. var declarations reside in the vars_fonts_navigator.css  */
+body {
+    font-family: var(--font-reading);
+    line-height: var(--line-reading);    
+    line-height: var(--line-reading);
+    background-color: __outer_background__; /* change this color in the Admin Settings panel */
+}
+
+/* Reading panel scale */
+body #dokuwiki__content .page {
+    font-size: var(--font-size-reading);
+}
+
+/* Optional: calm paragraph rhythm */
+body #dokuwiki__content .page p {
+    margin: 0 0 1.1em;
+}
+
+
+
+.page pre.code {
+    max-width: 80%;
+    /* Prevents box from looking like a horizontal line. Preserves vertical rhythm */
+    /* margin: 1.4em auto;  */
+}
+
+
+  /* centers the panel */
+div.dokuwiki .page {       
+    margin: 0 auto;     
+}
+
+
+/*TESTING border*/
+
+.dokuwiki .pageId {
+    display: none;
+}
+
+.hasSidebar #dokuwiki__content {    
+    background-color:__background_site__;    
+}
+
+/* Improves horizontal span of tables in the Admin Configuration Settings  */
+#config__manager fieldset {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    /* background-color: #eee; */    
+    font-size: 0.94rem;
+    line-height: 1.4;
+}
+
