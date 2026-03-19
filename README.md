@@ -70,8 +70,8 @@ Suggestions are welcome, and the project is open for anyone to fork and build up
 
 Stable versions are available on the GitHub Releases page, each with a ready‑to‑install ZIP package.
 
-The NavigatorLabels plugin will be published independently as well.  
-The DokuWiki submission and standalone plugin release will follow later this week.
+The `NavigatorLabels` plugin is bundled with the theme but it will be published independently as well.  
+The DokuWiki submission and standalone plugin and theme releases will follow later this week.
 
 
 
