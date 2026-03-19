@@ -62,8 +62,9 @@ See the included `LICENSE.txt` and `COPYING` files for full details.
 
 ## Contributing
 
-Navigator is designed with clarity and maintainability in mind.
-Contributions, refinements, and accessibility improvements are welcome.
+Navigator is shaped by a single hand for now, to preserve its clarity and voice.  
+Suggestions are welcome, and the project is open for anyone to fork and build upon.
+
 
 ## Releases
 
