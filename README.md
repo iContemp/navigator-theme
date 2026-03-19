@@ -27,14 +27,14 @@ The theme includes the **NavigatorLabels** plugin, providing a lightweight vocab
 2. **Unzip** the archive.  
 3. **Upload** the `navigator/` folder to your DokuWiki installation:
 
-   ```text
-   lib/tpl/navigator/
+   `lib/tpl/navigator/`
 
 4. In DokuWiki’s Configuration Manager, set the template to: **navigator**
 
-The **NavigatorLabels** plugin is included inside the theme and activates automatically once you move it to lib/plugins/.
+5. **Included plugin**: `NavigatorLabels`
 
-Included plugin: `NavigatorLabels`
+The **NavigatorLabels** plugin is included inside the theme and activates automatically **once you move it** to lib/plugins/.
+
 Navigator bundles a small companion plugin that allows administrators to redefine interface labels without editing core language files.
 
 It lives inside:  `navigator/navigatorlabels/`
