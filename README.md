@@ -1,5 +1,7 @@
 # Navigator Theme for DokuWiki
 
+**Live Demo:** https://icontemp.com/wiki/navigator/
+
 Navigator is a clean, modern, and intentionally minimal theme for DokuWiki.  
 It focuses on clarity, readability, and a calm visual rhythm—where content feels at home and navigation stays out of the way.
 
