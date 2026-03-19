@@ -68,8 +68,11 @@ Suggestions are welcome, and the project is open for anyone to fork and build up
 
 ## Releases
 
-Stable versions are available on the GitHub Releases page.
-Each release includes a ready-to-install ZIP package.
+Stable versions are available on the GitHub Releases page, each with a ready‑to‑install ZIP package.
+
+The NavigatorLabels plugin will be published independently as well.  
+The DokuWiki submission and standalone plugin release will follow later this week.
+
 
 
 
