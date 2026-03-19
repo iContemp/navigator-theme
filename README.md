@@ -32,14 +32,14 @@ The theme includes the **NavigatorLabels** plugin, providing a lightweight vocab
 
 4. In DokuWiki’s Configuration Manager, set the template to: **navigator**
 
-The NavigatorLabels plugin is included inside the theme and activates automatically.
+The **NavigatorLabels** plugin is included inside the theme and activates automatically once you move it to lib/plugins/.
 
 Included plugin: `NavigatorLabels`
 Navigator bundles a small companion plugin that allows administrators to redefine interface labels without editing core language files.
 
 It lives inside:  `navigator/navigatorlabels/`
 
-This plugin is optional but recommended—it helps keep the theme adaptable across languages and contexts.
+This plugin is a must for the top bar to work as intended. It helps keep the theme adaptable across languages and contexts.
 
 ## Folder structure
 
