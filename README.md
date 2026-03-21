@@ -23,21 +23,20 @@ The theme includes the **NavigatorLabels** plugin, providing a lightweight vocab
 
 ## Installation
 
-1. **Download** the latest release ZIP from the GitHub **Releases** page.  
-2. **Unzip** the archive.  
-3. **Upload** the `navigator/` folder to your DokuWiki installation:
+1. **Download** the latest release ZIP from the GitHub **Releases** page. 
+Use navigator.zip for installation. The auto‑generated source archives are not installable theme packages. 
+2. **Unzip** navigator.zip once it's in your system or server.  
+3. **Upload** the internal `navigator/` folder to your DokuWiki installation in :
 
-   `lib/tpl/navigator/`
+   `<your_wiki>/lib/tpl/     <navigator>`
 
 4. In DokuWiki’s Configuration Manager, set the template to: **navigator**
 
 5. **Included plugin**: `NavigatorLabels`
 
-The **NavigatorLabels** plugin is included inside the theme and activates automatically **once you move it** to lib/plugins/.
+For your convenience, the **NavigatorLabels** plugin is included inside the theme. You must move it to `<your_wiki>/lib/plugins/` to activate it.
 
-Navigator bundles a small companion plugin that allows administrators to redefine interface labels without editing core language files.
-
-It lives inside:  `navigator/navigatorlabels/`
+Alternatively, you can upload it via the extension manager from your local system Navigator copy.
 
 This plugin is a must for the top bar to work as intended. It helps keep the theme adaptable across languages and contexts.
 
@@ -49,7 +48,7 @@ navigator/
   fonts/            Bundled typefaces
   images/           Theme images and icons
   lang/             Language files
-  navigatorlabels/  Included plugin
+  navigatorlabels/  Included plugin. Move it to the plugins folder.
   LICENSE.txt       MIT license for original work
   COPYING           GPL license for inherited components
 
@@ -71,7 +70,7 @@ Suggestions are welcome, and the project is open for anyone to fork and build up
 Stable versions are available on the GitHub Releases page, each with a ready‑to‑install ZIP package.
 
 The `NavigatorLabels` plugin is bundled with the theme but it will be published independently as well.  
-The DokuWiki submission and standalone plugin and theme releases will follow later this week.
+The theme and plugin releases submissions to DokuWiki.org will follow later this week.
 
 
 
