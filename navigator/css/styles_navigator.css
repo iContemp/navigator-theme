@@ -1,9 +1,13 @@
 
 /**
- * v20260317a
+ * v20260323
  * styles_navigator.css  
  * → applies global font-family and line-height, and sets the reading-panel font size.
- * Please refer to vars_fonts_navigator.css for general guidelines 
+ * → Navigator theme autolist typography 
+ * → Logo color color and font
+ * However, please refer to vars_fonts_navigator.css & Admin Templates Manager 
+ * if the placeholder is var(**), adjust in the vars_fonts_navigator.css.
+ * If the placegholer is in the style of __**__, adjust the in Admin Template Manager.
 */
 
 /* =============================================================
@@ -14,8 +18,7 @@
 /* Global font identity. var declarations reside in the vars_fonts_navigator.css  */
 body {
     font-family: var(--font-reading);
-    line-height: var(--line-reading);    
-    line-height: var(--line-reading);
+    line-height: var(--line-reading);        
     background-color: __outer_background__; /* change this color in the Admin Settings panel */
 }
 
@@ -44,7 +47,7 @@ div.dokuwiki .page {
 }
 
 
-/*TESTING border*/
+/*Removing ID from reading panel's top right*/
 
 .dokuwiki .pageId {
     display: none;
@@ -65,3 +68,42 @@ div.dokuwiki .page {
     line-height: 1.4;
 }
 
+
+
+/*============================================================================
+    Navigator's internal page lists
+============================================================================= */
+
+
+/* UL styling — page lists */
+#dokuwiki__content .page.group > ul {    
+    font-family: __lists_font__; /* Verdana, Geneva, Tahoma, sans-serif */
+    background-color: __lists_background__ ; /* #fafafa*/
+    padding: 2px 10px;    
+    border-radius: 0 4px 4px 0;
+    line-height: 2;
+    list-style-type: disc;
+    font-size: 1.1rem;
+    font-weight: __lists_weight__; /* 400 */
+}
+
+/* Link styling inside those lists */
+#dokuwiki__content .page.group > ul a {
+    color: __lists_color__; /* #1b4974 */
+}
+
+/* Color of bullet hint for internal links */
+#dokuwiki__content .page.group > ul li::marker {
+    color: __bullet_lists_color__; /* #008800 */
+}
+
+/* =========================================================================
+    LOGO
+=========================================================================== */
+
+#dokuwiki__header .logo a {
+     font-family: __logo_font__; /*Verdana*/
+    color: __logo_color__; /*#ff0000*/
+}
+
+/*see description on top for explanation of placeholders as values */

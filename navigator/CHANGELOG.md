@@ -1,5 +1,11 @@
 ## Changelog
 
+### 2026‑03‑23
+- Added new Template Style variables for:
+  - Topic article lists: font family, text color, and background color
+  - Logo: font family and color
+- Updated `styles_navigator.css` to apply the new customization options
+
 ### 2026‑03‑18
 - Added Custom Link entry to the Topics panel for mobile and desktop
 - Introduced dedicated styling block for `.topics-customlink` with spacing, divider, and accent color
