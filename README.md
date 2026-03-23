@@ -40,6 +40,24 @@ Alternatively, you can upload it via the extension manager from your local syste
 
 This plugin is a must for the top bar to work as intended. It helps keep the theme adaptable across languages and contexts.
 
+### NavigatorLabels Plugin
+
+This release works together with the NavigatorLabels plugin, which provides
+multilingual sorting rules and customizable vocabulary for the top bar.
+
+The plugin is bundled inside the theme folder for convenience, but it must be
+installed in the standard DokuWiki plugin directory:
+
+    <your_wiki>/lib/plugins/navigatorlabels
+
+You may either:
+
+- download the plugin directly from its own GitHub release, or  
+- move the bundled copy from the theme folder into your wiki’s plugin directory.
+
+The standalone plugin repository is the authoritative source and will receive
+updates independently of the theme.
+
 ## Folder structure
 
 navigator/
