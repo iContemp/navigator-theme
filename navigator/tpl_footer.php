@@ -31,4 +31,6 @@ if (!defined('DOKU_INC')) die();
     </div>
 
     <?php tpl_includeFile('footer.html'); ?>
+    <div class="themeinfo">Theme: Navigator</div>
+
 </div></footer><!-- /footer -->
