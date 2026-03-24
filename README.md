@@ -23,40 +23,65 @@ The theme includes the **NavigatorLabels** plugin, providing a lightweight vocab
 
 ## Installation
 
-1. **Download** the latest release ZIP from the GitHub **Releases** page. 
-Use navigator.zip for installation. The auto‑generated source archives are not installable theme packages. 
-2. **Unzip** navigator.zip once it's in your system or server.  
-3. **Upload** the internal `navigator/` folder to your DokuWiki installation in :
+### Method 1. Manual installation (unzip + upload)
 
-   `<your_wiki>/lib/tpl/     <navigator>`
+Use this method if you prefer to install extensions manually.
 
-4. In DokuWiki’s Configuration Manager, set the template to: **navigator**
+1. Download the latest release ZIP from GitHub:  
+(https://github.com/iContemp/navigator-theme/releases)
 
-5. **Included plugin**: `NavigatorLabels`
+2. Unzip the file on your system.
 
-For your convenience, the **NavigatorLabels** plugin is included inside the theme. You must move it to `<your_wiki>/lib/plugins/` to activate it.
+3. Upload the internal `navigator/` folder to:
 
-Alternatively, you can upload it via the extension manager from your local system Navigator copy.
+    <your_wiki>/lib/tpl/
 
-This plugin is a must for the top bar to work as intended. It helps keep the theme adaptable across languages and contexts.
+4. In DokuWiki’s Configuration Manager, set the template to:
 
-### NavigatorLabels Plugin
+    `navigator` 
+5. The bundled NavigatorLabels plugin will be installed automatically <br>
+the next time you install Navigator via the Extension Manager.<br>
+If you are installing manually, move the included plugin folder to:
+    `<your_wiki>/lib/plugins/`
 
-This release works together with the NavigatorLabels plugin, which provides
-multilingual sorting rules and customizable vocabulary for the top bar.
+### Method 2. Install via Extension Manager (Recommended)
 
-The plugin is bundled inside the theme folder for convenience, but it must be
-installed in the standard DokuWiki plugin directory:
+This is the simplest and cleanest method.
 
-    <your_wiki>/lib/plugins/navigatorlabels
+1. Go to Admin → Extension Manager → Manual Install 
+2. Copy the direct URL of the release ZIP from GitHub
+3. Paste it into the Install from URL field
+4. Click Install
 
-You may either:
+DokuWiki will automatically install:
+- the Navigator theme
+- the NavigatorLabels plugin
 
-- download the plugin directly from its own GitHub release, or  
-- move the bundled copy from the theme folder into your wiki’s plugin directory.
+No manual steps are required.
 
-The standalone plugin repository is the authoritative source and will receive
-updates independently of the theme.
+### Activate the theme
+- Go to **Admin → Configuration → Template**
+- Select: `navigator`
+- Save the configuration.
+
+### (Optional) Rebuild the index after copying content
+
+If you imported pages from another wiki, rebuild the index:<br>
+`php bin/indexer.php -c`<br>
+This ensures autolists and sorting work correctly.
+
+### About the NavigatorLabels Plugin
+
+The NavigatorLabels plugin is bundled with the theme <br>
+and installed automatically when using the Extension Manager.
+
+It provides:
+
+- multilingual sorting rules
+- customizable vocabulary for the top bar
+- helper functions used by the theme
+
+The authoritative version will also be available as a standalone plugin on DokuWiki.org  once published.
 
 ## Folder structure
 
