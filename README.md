@@ -40,8 +40,8 @@ Use this method if you prefer to install extensions manually.
 
     `navigator` 
 5. The bundled NavigatorLabels plugin will be installed automatically <br>
-the next time you install Navigator via the Extension Manager.<br>
-If you are installing manually, move the included plugin folder to:
+when you install Navigator theme via the Extension Manager.<br>
+If you are installing the theme manually, move the included plugin folder to:
     `<your_wiki>/lib/plugins/`
 
 ### Method 2. Install via Extension Manager (Recommended)
