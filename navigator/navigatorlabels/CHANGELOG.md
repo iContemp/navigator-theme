@@ -1,3 +1,6 @@
+2026-03-25
+  * Updated URL in plugin.info.txt
+
 2026-03-18
   * Added Custom Link entry to the Topics panel for mobile and desktop
   * Introduced dedicated styling block for `.topics-customlink` with spacing, divider, and accent color

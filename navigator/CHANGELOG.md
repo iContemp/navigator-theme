@@ -1,5 +1,8 @@
 ## Changelog
 
+### 2026-03-25
+- Added latest Navigatorlabels plugin (v2026-03-25 - edited URL info).
+
 ### 2026-03-24
 - Added a small, unobtrusive theme identification line to the footer.
 

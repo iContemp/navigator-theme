@@ -1,7 +1,7 @@
 base     navigator
 author   Tony de Araujo
 email    
-date     2026-03-17
+date     2026-03-25
 name     Navigator Template
 desc     A clean, structured DokuWiki template focused on topic-based navigation, calm typography, and multilingual-friendly sorting. Includes an improved top bar with customizable labels and an optional admin-defined Custom Link button.
 url      https://icontemp.com/wiki/navigator/

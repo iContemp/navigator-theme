@@ -85,15 +85,15 @@ The authoritative version will also be available as a standalone plugin on DokuW
 
 ## Folder structure
 
-navigator/
-  css/              Theme stylesheets
-  conf/             Configuration defaults
-  fonts/            Bundled typefaces
-  images/           Theme images and icons
-  lang/             Language files
-  navigatorlabels/  Included plugin. Move it to the plugins folder.
-  LICENSE.txt       MIT license for original work
-  COPYING           GPL license for inherited components
+- navigator/
+  - css/              Theme stylesheets
+  - conf/             Configuration defaults
+  - fonts/            Bundled typefaces
+  - images/           Theme images and icons
+  - lang/             Language files
+  - navigatorlabels/  Included plugin. Move it to the plugins folder.
+  - LICENSE.txt       MIT license for original work
+  - COPYING           GPL license for inherited components
 
 ## Licensing
 
