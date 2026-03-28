@@ -23,52 +23,54 @@ The theme includes the **NavigatorLabels** plugin, providing a lightweight vocab
 
 ## Installation
 
-### Method 1. Manual installation (unzip + upload)
+### Install via Extension Manager (Recommended)
 
-Use this method if you prefer to install extensions manually.
-
-1. Download the latest release ZIP from GitHub:  
-(https://github.com/iContemp/navigator-theme/releases)
-
-2. Unzip the file on your system.
-
-3. Upload the internal `navigator/` folder to:
-
-    <your_wiki>/lib/tpl/
-
-4. In DokuWiki’s Configuration Manager, set the template to:
-
-    `navigator` 
-5. The bundled NavigatorLabels plugin will be installed automatically <br>
-when you install Navigator theme via the Extension Manager.<br>
-If you are installing the theme manually, move the included plugin folder to:
-    `<your_wiki>/lib/plugins/`
-
-### Method 2. Install via Extension Manager (Recommended)
-
-This is the simplest and cleanest method.
-
-1. Go to Admin → Extension Manager → Manual Install 
-2. Copy the direct URL of the release ZIP from GitHub
-3. Paste it into the Install from URL field
-4. Click Install
+1. Go to **Admin → Extension Manager**
+2. Search for **Navigator**
+3. Click **Install**
 
 DokuWiki will automatically install:
-- the Navigator theme
-- the NavigatorLabels plugin
+- the **Navigator** template  
+- the bundled **NavigatorLabels** plugin  
 
 No manual steps are required.
+
+4. In **Admin → Configuration → Template**, select:
+
+   `navigator`
+
+---
+
+### Manual Installation (Alternative)
+
+1. Download the latest release ZIP from GitHub  
+2. Unzip it locally  
+3. Upload the internal `navigator/` folder to:
+
+   `<your_wiki>/lib/tpl/`
+
+4. Upload the bundled `navigatorlabels/` plugin folder to:
+
+   `<your_wiki>/lib/plugins/`
+
+5. In **Admin → Configuration → Template**, select:
+
+   `navigator`
+
+---
+
+### Optional: Rebuild the index
+
+If you imported pages from another wiki, visit your bin folder and run the following command:
+
+`php indexer.php -c`
+
 
 ### Activate the theme
 - Go to **Admin → Configuration → Template**
 - Select: `navigator`
 - Save the configuration.
 
-### (Optional) Rebuild the index after copying content
-
-If you imported pages from another wiki, rebuild the index:<br>
-`php bin/indexer.php -c`<br>
-This ensures autolists and sorting work correctly.
 
 ### About the NavigatorLabels Plugin
 
@@ -81,7 +83,7 @@ It provides:
 - customizable vocabulary for the top bar
 - helper functions used by the theme
 
-The authoritative version will also be available as a standalone plugin on DokuWiki.org  once published.
+The authoritative version will also be listed as a standalone plugin on DokuWiki.org and available at GitHub.
 
 ## Folder structure
 
